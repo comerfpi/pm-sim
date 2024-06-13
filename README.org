@@ -1,0 +1,3 @@
+#+TITLE:Purity Monitor Simulation
+
+A simplified model of the LXe purity monitor for LoLX/PIONEER, built on Garfield++.
