@@ -18,4 +18,8 @@ using namespace Garfield;
 
 int main() {
 
-    MediumMagboltz }
+  // Make LXe medium using NEST-generated gas table
+  MediumMagboltz LXe;
+  LXe.LoadGasFile("GasTable_Xe_165K");
+
+}
