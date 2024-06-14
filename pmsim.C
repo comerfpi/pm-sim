@@ -14,13 +14,22 @@
 #include "Garfield/DriftLineRKF.hh"
 #include "Garfield/TrackHeed.hh"
 
+
 using namespace Garfield;
 
-int pmsim() {
+double sagFunc(double x, double y, double z){
+    // A parabola is basically a catenary, right?
 
-  // Make LXe medium using NEST-generated gas table
-  MediumMagboltz LXe;
-  LXe.LoadGasFile("GasTable_Xe_165K");
+    }
 
-}
-main
+void pmsim(){
+
+    // Make LXe medium using NEST-generated gas table
+    MediumMagboltz LXe;
+    LXe.LoadGasFile("GasTable_Xe_165K.gas");
+
+    }
+
+int main(){
+    pmsim();
+    }
