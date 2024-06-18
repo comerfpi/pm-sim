@@ -6,9 +6,9 @@
 #include <regex>
 #include <random>
 
-#include <root/TApplication.h>
-#include <root/TCanvas.h>
-#include <root/TH1F.h>
+#include <TApplication.h>
+#include <TCanvas.h>
+#include <TH1F.h>
 
 #include "Garfield/ComponentComsol.hh"
 #include "Garfield/ViewCell.hh"
