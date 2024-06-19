@@ -54,7 +54,7 @@ int main(int argc, char * argv[]) {
   //100% xenon gas
   gas.SetComposition("xe", 100.);
   //temperature [K]
-  gas.SetTemperature(120);
+  gas.SetTemperature(293);
   //pressure [Torr]
   gas.SetPressure(760.);
   //initialize table of scattering rates (called internally when a collision rate is requested and the gas mixture or other parameters have changed)
@@ -63,7 +63,7 @@ int main(int argc, char * argv[]) {
   //load the ion mobilities.
   const std::string path = std::getenv("GARFIELD_INSTALL");
   gas.LoadIonMobility(path + "/share/Garfield/Data/IonMobility_Xe+_P12_Xe.txt");
-  gas.LoadGasFile("data/xe760Torr.gas");
+  gas.LoadGasFile("data/GasTable_Xe_120K.gas");
 
   fm.SetGas(&gas);
   fm.PrintMaterials();
