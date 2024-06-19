@@ -45,7 +45,7 @@ int main(int argc, char * argv[]) {
   const int vCathode = -2032.4;
 
   ComponentComsol fm;
-  fm.Initialise("mesh20r70lpi45deggrid.mphtxt", "dielectric20r45deggrid.dat", "field20r70lpi45deggrid.txt", "mm");
+  fm.Initialise("data/mesh20r70lpi45deggrid.mphtxt", "data/dielectric20r45deggrid.dat", "data/field20r70lpi45deggrid.txt", "mm");
   fm.PrintRange();
 
   MediumMagboltz gas;
@@ -63,7 +63,7 @@ int main(int argc, char * argv[]) {
   //load the ion mobilities.
   const std::string path = std::getenv("GARFIELD_INSTALL");
   gas.LoadIonMobility(path + "/share/Garfield/Data/IonMobility_Xe+_P12_Xe.txt");
-  gas.LoadGasFile("xe760Torr.gas");
+  gas.LoadGasFile("data/xe760Torr.gas");
 
   fm.SetGas(&gas);
   fm.PrintMaterials();
@@ -83,7 +83,7 @@ int main(int argc, char * argv[]) {
   // sensor.SetTimeWindow(0., 1, nSteps);
   
   std::ofstream outfile;
-  outfile.open("/home/claire/COMSOL_test/FullTransparency.txt", std::ios::out);
+  outfile.open("data/FullTransparency.txt", std::ios::out);
   ViewDrift driftView;
   driftline.EnablePlotting(&driftView);
  
