@@ -1,4 +1,4 @@
-// derivative of claire/efield_modellin
+// derivative of claire/efield_modelling
 #include <cstdlib>
 #include <iostream>
 #include <fstream>
