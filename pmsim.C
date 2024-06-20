@@ -54,9 +54,9 @@ int main(int argc, char * argv[]) {
   //100% xenon gas
   gas.SetComposition("xe", 100.);
   //temperature [K]
-  gas.SetTemperature(293);
+  gas.SetTemperature(293.);
   //pressure [Torr]
-  gas.SetPressure(760.);
+  gas.SetPressure(1350.);
   //initialize table of scattering rates (called internally when a collision rate is requested and the gas mixture or other parameters have changed)
   gas.Initialise(false);  
   
