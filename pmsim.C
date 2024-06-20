@@ -83,7 +83,7 @@ int main(int argc, char * argv[]) {
   // sensor.SetTimeWindow(0., 1, nSteps);
   
   std::ofstream outfile;
-  outfile.open("data/FullTransparency.txt", std::ios::out);
+  outfile.open("FullTransparency.txt", std::ios::out);
   ViewDrift driftView;
   driftline.EnablePlotting(&driftView);
  
