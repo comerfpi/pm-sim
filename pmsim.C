@@ -32,7 +32,7 @@ int main(int argc, char * argv[]) {
   TApplication app("app", &argc, argv);
 
   // Create a canvas
-  TCanvas* canvas = new TCanvas("canvas", "Drift Lines", 800, 600);
+  TCanvas* canvas = new TCanvas("canvas", "Drift Lines", 800, 800);
 
   //number of electrons produced in initial avalanche
   int initElectronTotal = 0;
