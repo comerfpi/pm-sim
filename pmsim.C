@@ -38,9 +38,9 @@ int main(int argc, char * argv[]) {
   int initElectronTotal = 0;
   //number of electrons that end up at the anode
   int finalElectronTotal = 0;
-  const int numRuns = 100;
+  const int numRuns = 10;
   //number of electrons to eject
-  const int nElectron = 1000;
+  const int nElectron = 100;
  
   //parameters to change based on comsol model [cm]
   const int zCathode = 5.3293; //yCathode in model
