@@ -31,6 +31,9 @@ using namespace Garfield;
 int main(int argc, char * argv[]) {
   TApplication app("app", &argc, argv);
 
+  // Create a canvas
+  TCanvas* canvas = new TCanvas("canvas", "Drift Lines", 800, 600);
+
   //number of electrons produced in initial avalanche
   int initElectronTotal = 0;
   //number of electrons that end up at the anode
@@ -155,8 +158,13 @@ int main(int argc, char * argv[]) {
   }
 outfile.close();
 
-   // std::cout<<"Average transparency: "<<avgTransparency/numRuns<<std::endl;
+  // Draw the drift view
+  driftView.SetCanvas(canvas);
+  driftView.Plot();
 
-  std::cout<<"done"<<std::endl;
+  // Run the application
   app.Run(true);
+
+  std::cout << "done" << std::endl;
+  return 0;
 }
