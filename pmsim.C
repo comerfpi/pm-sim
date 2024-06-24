@@ -160,8 +160,11 @@ outfile.close();
 
   // Draw the drift view
   driftView.SetCanvas(canvas);
+  driftView.SetRangeX(-3.0, 3.0); // Set the range for the x-axis
+  driftView.SetRangeY(-3.0, 3.0); // Set the range for the y-axis
+  driftView.SetXTitle("X [cm]");  // Set the title for the x-axis
+  driftView.SetYTitle("Y [cm]");  // Set the title for the y-axis
   driftView.Plot();
-
   // Run the application
   app.Run(true);
 
