@@ -118,7 +118,7 @@ int main(int argc, char * argv[]) {
       // Electrons start in small circle with r ~ NA of fibre (a few mm)
       std::uniform_real_distribution<double> dist(0, 1);
       double random_numberr = 0.1 * sqrt(dist(gen));
-      double random_numbera = 2 * TMath::Pi() * dist(gen);
+      double random_numbera = 2 * Garfield::Pi() * dist(gen);
 
       const double startX = random_numberr * cos(random_numbera);
       const double startY = random_numberr * sin(random_numbera);
