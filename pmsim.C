@@ -92,7 +92,6 @@ int main(int argc, char * argv[]) {
 
   ViewFEMesh viewMesh;
   viewMesh.SetComponent(&fm);
-  viewMesh.SetCanvas(canvas);
  
    // //drift electrons using RKF method
   int totalElectron = 0;
@@ -162,6 +161,7 @@ int main(int argc, char * argv[]) {
   }
 outfile.close();
 
+  viewMesh.SetCanvas(canvas);
   viewMesh.Plot();
   // Draw the drift view
   driftView.SetCanvas(canvas);
