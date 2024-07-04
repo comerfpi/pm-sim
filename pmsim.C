@@ -43,12 +43,12 @@ int main(int argc, char * argv[]) {
   const int nElectron = 100;
  
   //parameters to change based on comsol model [cm]
-  const int zCathode = 5.3293; //yCathode in model
+  const int zCathode = 4.5155; //yCathode in model
   const int vAnode = 129.6;
-  const int vCathode = -2032.4;
+  const int vCathode = -1584.4;
 
   ComponentComsol fm;
-  fm.Initialise("data/mesh20r70lpi45deggrid.mphtxt", "data/dielectric20r45deggrid.dat", "data/field20r70lpi45deggrid.txt", "mm");
+  fm.Initialise("data/pumamesh.mphtxt", "data/dielectric.dat", "data/pumafield.txt", "mm");
   fm.PrintRange();
 
   MediumMagboltz gas;
