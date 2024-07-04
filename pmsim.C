@@ -90,9 +90,6 @@ int main(int argc, char * argv[]) {
   ViewDrift driftView;
   driftline.EnablePlotting(&driftView);
 
-  ViewFEMesh viewMesh;
-  viewMesh.SetComponent(&fm);
- 
    // //drift electrons using RKF method
   int totalElectron = 0;
   double avgTransparency=0;
@@ -161,8 +158,6 @@ int main(int argc, char * argv[]) {
   }
 outfile.close();
 
-  viewMesh.SetCanvas(canvas);
-  viewMesh.Plot();
   // Draw the drift view
   driftView.SetCanvas(canvas);
   driftView.Plot();
