@@ -89,6 +89,11 @@ int main(int argc, char * argv[]) {
   outfile.open("FullTransparency.csv", std::ios::out);
   ViewDrift driftView;
   driftline.EnablePlotting(&driftView);
+
+  ViewFEMesh viewMesh;
+  viewMesh.SetComponent(&fm);
+  viewMesh.SetCanvas(canvas);
+  viewMesh.SetPlane(0, -1, 0, 0); // Set the plane of the mesh you want to view, adjust parameters as needed
  
    // //drift electrons using RKF method
   int totalElectron = 0;
@@ -158,6 +163,7 @@ int main(int argc, char * argv[]) {
   }
 outfile.close();
 
+  viewMesh.Plot();
   // Draw the drift view
   driftView.SetCanvas(canvas);
   driftView.Plot();
