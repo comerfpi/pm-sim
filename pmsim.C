@@ -108,14 +108,20 @@ int main(int argc, char * argv[]) {
     for (int i = 0; i<nElectron; i++) {
       std::random_device rd;
       std::mt19937 gen(rd());
-      double min = -0.2;
-      double max = 0.2;
-      std::uniform_real_distribution<double> dist(min, max);
-      double random_numberx = dist(gen);
-      double random_numbery = dist(gen);
+      // // Electrons start in arbitrary square
+      // double min = -0.2;
+      // double max = 0.2;
+      // std::uniform_real_distribution<double> dist(min, max);
+      // double random_numberx = dist(gen);
+      // double random_numbery = dist(gen);
       
-      const double startX = random_numberx;
-      const double startY = random_numbery;
+      // Electrons start in small circle with r ~ NA of fibre (a few mm)
+      std::uniform_real_distribution<double> dist(0, 1);
+      double random_numberr = 0.1 * sqrt(dist(gen));
+      double random_numbera = 2 * TMath::Pi() * dist(gen);
+
+      const double startX = random_numberr * cos(random_numbera);
+      const double startY = random_numberr * sin(random_numbera);
       const double startZ = ejectFrom;
       driftline.DriftElectron(startX, startY, startZ, 0);
       double x1, y1, z1, t1;
