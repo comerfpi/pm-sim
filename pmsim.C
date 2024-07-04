@@ -96,7 +96,7 @@ int main(int argc, char * argv[]) {
   double gap1 = (4.51-4.35)/11;
   for (int k = 0; k<10; k++) {
   double ejectFrom = 4.35+(k*gap1);
-  double measureFrom = 0.162-(k*gap1);
+  double measureFrom = 0.147-(k*gap1);
   for (int j = 0; j<numRuns; j++) {
     std::stringstream buffer;
     std::streambuf* oldCerr = std::cerr.rdbuf(buffer.rdbuf());
