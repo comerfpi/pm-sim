@@ -17,9 +17,9 @@ void histogrammer() {
     }
 
     // Define histograms
-    TH1F *histX = new TH1F("histX", "Distribution of Ex", 100, -10, 10);
-    TH1F *histY = new TH1F("histY", "Distribution of Ey", 100, -10, 10);
-    TH1F *histZ = new TH1F("histZ", "Distribution of Ez", 100, -10, 10);
+    TH1F *histX = new TH1F("histX", "Distribution of Ex", 100, 0, 240000);
+    TH1F *histY = new TH1F("histY", "Distribution of Ey", 100, 0, 240000);
+    TH1F *histZ = new TH1F("histZ", "Distribution of Ez", 100, 0, 240000);
 
     // Read data, discarding %comments
     double x, y, z, Ex, Ey, Ez;

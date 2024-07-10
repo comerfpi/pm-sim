@@ -1,6 +1,6 @@
 #+TITLE:Purity Monitor Simulation
 
-A simplified model of the LXe purity monitor for LoLX/PIONEER, built on Garfield++.
+A complete model of the LXe purity monitor for LoLX/PIONEER, built on Garfield++, using electron transport properties from NEST and final CAD mesh (courtesy Nicolas Massacret) with electric field generated using COMSOL Multiphysics. Includes a program to plot histogram of all three components of the electric field using ROOT. 
 
 * Building
 
