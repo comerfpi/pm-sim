@@ -17,9 +17,13 @@ void histogrammer() {
     }
 
     // Define histograms
+    // 1D
     TH1F *histX = new TH1F("histX", "Distribution of Ex", 100, 0, 80000);
     TH1F *histY = new TH1F("histY", "Distribution of Ey", 100, 0, 80000);
     TH1F *histZ = new TH1F("histZ", "Distribution of Ez", 100, 0, 80000);
+    // 2D
+    TH2F *histXY = new TH2F("histXY", "Distribution of Ex and Ey", 100, 0, 80000, 100, 0, 80000);
+
 
     // Read data, discarding %comments
     double x, y, z, Ex, Ey, Ez;
@@ -33,30 +37,42 @@ void histogrammer() {
 	histX->Fill(Ex);
 	histY->Fill(Ey);
 	histZ->Fill(Ez);
+	histXY->Fill(Ex, Ey);
       }
     }
 
     inFile.close();
 
     // Create canvas, draw histograms
-    TCanvas *canvas = new TCanvas("canvas", "Electric Field Distributions", 800, 600);
-    canvas->Divide(3,1);
+    TCanvas *canvas1 = new TCanvas("canvas1", "Electric Field Distributions", 800, 600);
+    canvas1->Divide(3,1);
 
-    canvas->cd(1);
+    canvas1->cd(1);
     histX->Draw();
 
-    canvas->cd(2);
+    canvas1->cd(2);
     histY->Draw();
 
-    canvas->cd(3);
+    canvas1->cd(3);
     histZ->Draw();
 
-    canvas->SaveAs("histogram.eps");
+    canvas1->SaveAs("histogram.eps");
+
+    TCanvas *canvas2 = new TCanvas("canvas2", "Electric Field Distributions", 800, 600);
+
+    hXY->Draw("COLZ");
+
+    // Save the canvas as an SVG file
+    canvas2->SaveAs("histogram2D.eps");
 
     delete histX;
     delete histY;
     delete histZ;
-    delete canvas;
+    delete canvas1;
+
+    delete histXY;
+    delete canvas2;
+
 }
 
 // For compiling
