@@ -4,8 +4,8 @@
 #include <fstream>
 #include <string>
 #include <sstream>
-#include <TH1F.h>
-#include "TH2F.h"
+#include <TH1D.h>
+#include <TH2D.h>
 #include <TFile.h>
 #include <TTree.h>
 #include <TCanvas.h>
@@ -19,11 +19,11 @@ void histogrammer() {
 
     // Define histograms
     // 1D
-    TH1F *histX = new TH1F("histX", "Distribution of Ex", 100, 0, 80000);
-    TH1F *histY = new TH1F("histY", "Distribution of Ey", 100, 0, 80000);
-    TH1F *histZ = new TH1F("histZ", "Distribution of Ez", 100, 0, 80000);
+    TH1D *histX = new TH1D("histX", "Distribution of Ex", 100, 0, 80000);
+    TH1D *histY = new TH1D("histY", "Distribution of Ey", 100, 0, 80000);
+    TH1D *histZ = new TH1D("histZ", "Distribution of Ez", 100, 0, 80000);
     // 2D
-    TH2F *histXY = new TH2F("histXY", "Distribution of Ex and Ey", 100, 0, 80000, 100, 0, 80000);
+    TH2D *histXY = new TH2D("histXY", "Distribution of Ex and Ey", 100, 0, 80000, 100, 0, 80000);
 
 
     // Read data, discarding %comments
@@ -61,7 +61,7 @@ void histogrammer() {
 
     TCanvas *canvas2 = new TCanvas("canvas2", "Electric Field Distributions", 800, 600);
 
-    histXY->Draw("COLZ");
+    histXY->Draw("LEGO1");
 
     // Save the canvas as an SVG file
     canvas2->SaveAs("histogram2D.eps");
