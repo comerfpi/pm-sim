@@ -5,6 +5,7 @@
 #include <string>
 #include <sstream>
 #include <TH1F.h>
+#include "TH2F.h"
 #include <TFile.h>
 #include <TTree.h>
 #include <TCanvas.h>
@@ -60,7 +61,7 @@ void histogrammer() {
 
     TCanvas *canvas2 = new TCanvas("canvas2", "Electric Field Distributions", 800, 600);
 
-    hXY->Draw("COLZ");
+    histXY->Draw("COLZ");
 
     // Save the canvas as an SVG file
     canvas2->SaveAs("histogram2D.eps");
