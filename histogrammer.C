@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <sstream>
 #include <TH1F.h>
 #include <TFile.h>
 #include <TTree.h>
