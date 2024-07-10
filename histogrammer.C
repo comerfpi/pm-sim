@@ -51,7 +51,7 @@ void histogrammer() {
     canvas->cd(3);
     histZ->Draw();
 
-    canvas->SaveAs("histogram.svg");
+    canvas->SaveAs("histogram.eps");
 
     delete histX;
     delete histY;
