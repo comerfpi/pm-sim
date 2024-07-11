@@ -22,7 +22,7 @@ void histogrammer() {
     TH1D *histX = new TH1D("histX", "Distribution of Ex", 100, 0, 80000);
     TH1D *histY = new TH1D("histY", "Distribution of Ey", 100, 0, 80000);
     TH1D *histZ = new TH1D("histZ", "Distribution of Ez", 100, 0, 80000);
-    TH1D *histNorm = new TH1D("histNorm", "Distribution of |E|", 100, 0, 80000);
+    TH1D *histNorm = new TH1D("histNorm", "Distribution of |E|", 100, 0, 240000);
     // 2D
     TH2D *histXY = new TH2D("histXY", "Distribution of Ex and Ey", 100, -8000, 8000, 100, -8000, 8000);
 
