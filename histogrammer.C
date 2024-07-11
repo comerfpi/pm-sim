@@ -36,11 +36,15 @@ void histogrammer() {
 
       std::istringstream ss(line);
       if (ss >> x >> y >> z >> Ex >> Ey >> Ez >> normE) {
-	histX->Fill(Ex);
-	histY->Fill(Ey);
-	histZ->Fill(Ez);
-	histNorm->Fill(normE);
-	histXY->Fill(Ex, Ey);
+	// only take points inside 1mm radius (where there should be uniformity)
+	// and only between the cathode and the anode
+	if (sqrt(x*x + y*y) >= 1.0 && z <= 2.0 && z >= 45.155) {
+	  histX->Fill(Ex);
+	  histY->Fill(Ey);
+	  histZ->Fill(Ez);
+	  histNorm->Fill(normE);
+	  histXY->Fill(Ex, Ey);
+	  }
       }
 
     }
