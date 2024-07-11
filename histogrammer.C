@@ -38,7 +38,8 @@ void histogrammer() {
       if (ss >> x >> y >> z >> Ex >> Ey >> Ez >> normE) {
 	// only take points inside 1mm radius (where there should be uniformity)
 	// and only between the cathode and the anode
-	if (sqrt(x*x + y*y) >= 1.0 && z <= 2.0 && z >= 45.155) {
+	//if ((x*x + y*y) >= 1.0 && z <= 2.0 && z >= 45.155) {
+	if ((x*x + y*y) >= 1.0) {
 	  histX->Fill(Ex);
 	  histY->Fill(Ey);
 	  histZ->Fill(Ez);
