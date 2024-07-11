@@ -2,6 +2,8 @@
 
 A complete model of the LXe purity monitor for LoLX/PIONEER, built on Garfield++, using electron transport properties from NEST and final CAD mesh (courtesy Nicolas Massacret) with electric field generated using COMSOL Multiphysics. Includes a program to plot histogram of all three components of the electric field using ROOT. 
 
+[[./img/rainbowcleargrid.png]]
+
 * Building
 
 Ensure Garfield++, ROOT, and NEST are installed, and build using ~make~.
