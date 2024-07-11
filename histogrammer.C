@@ -22,22 +22,24 @@ void histogrammer() {
     TH1D *histX = new TH1D("histX", "Distribution of Ex", 100, 0, 80000);
     TH1D *histY = new TH1D("histY", "Distribution of Ey", 100, 0, 80000);
     TH1D *histZ = new TH1D("histZ", "Distribution of Ez", 100, 0, 80000);
+    TH1D *histNorm = new TH1D("histNorm", "Distribution of |E|", 100, 0, 80000);
     // 2D
     TH2D *histXY = new TH2D("histXY", "Distribution of Ex and Ey", 100, -8000, 8000, 100, -8000, 8000);
 
 
     // Read data, discarding %comments
-    double x, y, z, Ex, Ey, Ez;
+    double x, y, z, Ex, Ey, Ez, normE;
     std::string line;
 
     while (std::getline(inFile, line)) {
       if (line[0] == '%') continue;
 
       std::istringstream ss(line);
-      if (ss >> x >> y >> z >> Ex >> Ey >> Ez) {
+      if (ss >> x >> y >> z >> Ex >> Ey >> Ez >> normE) {
 	histX->Fill(Ex);
 	histY->Fill(Ey);
 	histZ->Fill(Ez);
+	histNorm->Fill(normE);
 	histXY->Fill(Ex, Ey);
       }
 
@@ -67,6 +69,12 @@ void histogrammer() {
     // Save the canvas as an SVG file
     canvas2->SaveAs("histogram2D.eps");
 
+    TCanvas *canvas3 = new TCanvas("canvas3", "Electric Field Norm Distribution", 800, 600);
+
+    histNorm->Draw();
+
+    canvas3->SaveAs("histogramnorm.eps")
+
     delete histX;
     delete histY;
     delete histZ;
@@ -75,6 +83,8 @@ void histogrammer() {
     delete histXY;
     delete canvas2;
 
+    delete histNorm;
+    delete canvas3;
 }
 
 // For compiling
