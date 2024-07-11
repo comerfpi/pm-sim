@@ -40,6 +40,7 @@ void histogrammer() {
 	histZ->Fill(Ez);
 	histXY->Fill(Ex, Ey);
       }
+
     }
 
     inFile.close();
