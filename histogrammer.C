@@ -73,7 +73,7 @@ void histogrammer() {
 
     histNorm->Draw();
 
-    canvas3->SaveAs("histogramnorm.eps")
+    canvas3->SaveAs("histogramnorm.eps");
 
     delete histX;
     delete histY;
