@@ -60,20 +60,20 @@ void histogrammer() {
     canvas1->cd(3);
     histZ->Draw();
 
-    canvas1->SaveAs("histogram.eps");
+    canvas1->SaveAs("histogram.pdf");
 
     TCanvas *canvas2 = new TCanvas("canvas2", "Electric Field Distributions", 800, 600);
 
     histXY->Draw("LEGO1");
 
     // Save the canvas as an SVG file
-    canvas2->SaveAs("histogram2D.eps");
+    canvas2->SaveAs("histogram2D.pdf");
 
     TCanvas *canvas3 = new TCanvas("canvas3", "Electric Field Norm Distribution", 800, 600);
 
     histNorm->Draw();
 
-    canvas3->SaveAs("histogramnorm.eps");
+    canvas3->SaveAs("histogramnorm.pdf");
 
     delete histX;
     delete histY;
