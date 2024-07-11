@@ -6,4 +6,4 @@ A complete model of the LXe purity monitor for LoLX/PIONEER, built on Garfield++
 
 * Building
 
-Ensure Garfield++, ROOT, and NEST are installed, and build using ~make~.
+Ensure Garfield++, ROOT, and NEST are installed (you will probably want to use the GiNGeR container in my singularity-containers repo), and build using ~make~.
