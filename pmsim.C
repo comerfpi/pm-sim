@@ -1,3 +1,4 @@
+#!/usr/bin/root
 // derivative of claire/efield_modelling
 #include <cstdlib>
 #include <iostream>
