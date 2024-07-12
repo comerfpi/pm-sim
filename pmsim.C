@@ -1,3 +1,4 @@
+#!/usr/bin/root
 // derivative of claire/efield_modelling
 #include <cstdlib>
 #include <iostream>
@@ -32,7 +33,7 @@ int main(int argc, char * argv[]) {
   TApplication app("app", &argc, argv);
 
   // Create a canvas
-  TCanvas* canvas = new TCanvas("canvas", "Drift Lines", 800, 600);
+  TCanvas* canvas = new TCanvas("canvas", "Drift Lines", 800, 800);
 
   //number of electrons produced in initial avalanche
   int initElectronTotal = 0;
@@ -47,19 +48,9 @@ int main(int argc, char * argv[]) {
   const int vAnode = 129.6;
   const int vCathode = -1584.4;
 
-  // ComponentComsol fm;
-  //Garfield::ComponentComsol* fm = new Garfield::ComponentComsol();
-  auto fm = new Garfield::ComponentComsol("data/pumamesh.mphtxt", "data/dielectric.dat", "data/pumafield.txt", "mm");
-  //fm->Initialise("data/pumamesh.mphtxt", "data/dielectric.dat", "data/pumafield.txt", "mm");
-  fm->PrintRange();
-
-  //Garfield::ViewField* viewField = new Garfield::ViewField();
-  //viewField->SetComponent(fm);
-  //viewField->SetArea(-1., -1., 1., 1.);
-
-  //TCanvas* fieldcanvas = new TCanvas("fieldcanvas", "Electric Field", 800, 600);
-  //viewField->Plot("e");
-  //fieldcanvas->SaveAs("electricfield.pdf");
+  ComponentComsol fm;
+  fm.Initialise("data/pumamesh.mphtxt", "data/dielectric.dat", "data/pumafield.txt", "mm");
+  fm.PrintRange();
 
   MediumMagboltz gas;
 
@@ -78,9 +69,9 @@ int main(int argc, char * argv[]) {
   gas.LoadIonMobility(path + "/share/Garfield/Data/IonMobility_Xe+_P12_Xe.txt");
   gas.LoadGasFile("data/GasTable_Xe_120K.gas");
 
-  fm->SetGas(&gas);
-  fm->PrintMaterials();
-  fm->EnableConvergenceWarnings(false);
+  fm.SetGas(&gas);
+  fm.PrintMaterials();
+  fm.EnableConvergenceWarnings(false);
 
   Sensor sensor;
   sensor.AddComponent(&fm);
