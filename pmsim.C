@@ -28,7 +28,7 @@
 
 using namespace Garfield;
 
-int main(int argc, char * argv[]) {
+int pmsim(int argc, char * argv[]) {
   TApplication app("app", &argc, argv);
 
   // Create a canvas
@@ -173,4 +173,10 @@ outfile.close();
 
   std::cout << "done" << std::endl;
   return 0;
+}
+
+// For compiling
+int main() {
+    pmsim();
+    return 0;
 }
