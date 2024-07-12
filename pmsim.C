@@ -49,8 +49,8 @@ int main(int argc, char * argv[]) {
 
   // ComponentComsol fm;
   Garfield::ComponentComsol* fm = new Garfield::ComponentComsol();
-  fm.Initialise("data/pumamesh.mphtxt", "data/dielectric.dat", "data/pumafield.txt", "mm");
-  fm.PrintRange();
+  fm->Initialise("data/pumamesh.mphtxt", "data/dielectric.dat", "data/pumafield.txt", "mm");
+  fm->PrintRange();
 
   Garfield::ViewField* viewField = new Garfield::ViewField();
   viewField->SetComponent(fm);
@@ -77,9 +77,9 @@ int main(int argc, char * argv[]) {
   gas.LoadIonMobility(path + "/share/Garfield/Data/IonMobility_Xe+_P12_Xe.txt");
   gas.LoadGasFile("data/GasTable_Xe_120K.gas");
 
-  fm.SetGas(&gas);
-  fm.PrintMaterials();
-  fm.EnableConvergenceWarnings(false);
+  fm->SetGas(&gas);
+  fm->PrintMaterials();
+  fm->EnableConvergenceWarnings(false);
 
   Sensor sensor;
   sensor.AddComponent(&fm);
