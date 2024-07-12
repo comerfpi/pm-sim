@@ -48,7 +48,7 @@ int main(int argc, char * argv[]) {
   const int vCathode = -1584.4;
 
   // ComponentComsol fm;
-  Garfield::ComponentComsol* fm = new Garfield::ComponentComsol()
+  Garfield::ComponentComsol* fm = new Garfield::ComponentComsol();
   fm.Initialise("data/pumamesh.mphtxt", "data/dielectric.dat", "data/pumafield.txt", "mm");
   fm.PrintRange();
 
