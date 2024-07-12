@@ -57,7 +57,7 @@ int main(int argc, char * argv[]) {
 
   TCanvas* fieldcanvas = new TCanvas("fieldcanvas", "Electric Field", 800, 600);
   viewField->Plot("e");
-  fieldcanvas->SaveAs("electricfield.pdf")
+  fieldcanvas->SaveAs("electricfield.pdf");
 
   MediumMagboltz gas;
 
