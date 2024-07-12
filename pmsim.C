@@ -28,7 +28,7 @@
 
 using namespace Garfield;
 
-int pmsim(int argc, char * argv[]) {
+int main(int argc, char * argv[]) {
   TApplication app("app", &argc, argv);
 
   // Create a canvas
@@ -43,9 +43,9 @@ int pmsim(int argc, char * argv[]) {
   const int nElectron = 100;
  
   //parameters to change based on comsol model [cm]
-  const int zCathode = 4.5155; //yCathode in model
-  const int vAnode = 129.6;
-  const int vCathode = -1584.4;
+  const double zCathode = 4.5155; //yCathode in model
+  const double vAnode = 129.6;
+  const double vCathode = -1584.4;
 
   ComponentComsol fm;
   fm.Initialise("data/pumamesh.mphtxt", "data/dielectric.dat", "data/pumafield.txt", "mm");
@@ -173,10 +173,4 @@ outfile.close();
 
   std::cout << "done" << std::endl;
   return 0;
-}
-
-// For compiling
-int main(int argc, char * argv[]) {
-    pmsim();
-    return 0;
 }
