@@ -176,7 +176,7 @@ outfile.close();
 }
 
 // For compiling
-int main() {
+int main(int argc, char * argv[]) {
     pmsim();
     return 0;
 }
