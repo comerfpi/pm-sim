@@ -53,13 +53,13 @@ int main(int argc, char * argv[]) {
   //fm->Initialise("data/pumamesh.mphtxt", "data/dielectric.dat", "data/pumafield.txt", "mm");
   fm->PrintRange();
 
-  Garfield::ViewField* viewField = new Garfield::ViewField();
-  viewField->SetComponent(fm);
-  viewField->SetArea(-1., -1., 1., 1.);
+  //Garfield::ViewField* viewField = new Garfield::ViewField();
+  //viewField->SetComponent(fm);
+  //viewField->SetArea(-1., -1., 1., 1.);
 
-  TCanvas* fieldcanvas = new TCanvas("fieldcanvas", "Electric Field", 800, 600);
-  viewField->Plot("e");
-  fieldcanvas->SaveAs("electricfield.pdf");
+  //TCanvas* fieldcanvas = new TCanvas("fieldcanvas", "Electric Field", 800, 600);
+  //viewField->Plot("e");
+  //fieldcanvas->SaveAs("electricfield.pdf");
 
   MediumMagboltz gas;
 
