@@ -1,6 +1,6 @@
 #include <iostream>
 #include <NEST.hh>
-#include <DetectorExample_Xenon.hh>
+#include <DetectorExample_XENON10.hh>
 
 int main() {
     // Initialize NEST
