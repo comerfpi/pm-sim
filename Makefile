@@ -1,5 +1,5 @@
 # Define the compiler
-CXX = g++
+CXX1 = g++
 
 # Define the output executable name
 TARGET1 = pmsim
@@ -15,7 +15,7 @@ SRC3 = driftvel.cpp
 CXXFLAGS = `root-config --cflags --libs` -lGarfield -I/usr/local/include/NEST -I/usr/local/include/Detectors -lNEST
 
 # The rule to build all targets
-all: $(TARGET1) $(TARGET2) $(TARGET3)
+all: $(TARGET1) $(TARGET2) $(TARGET3) 
 
 # The rule to build the targets
 $(TARGET1): $(SRC1)
