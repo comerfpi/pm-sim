@@ -7,7 +7,7 @@ int main() {
     NEST::NESTcalc nestCalc;
     
     // Set up the example detector
-    NEST::DetectorExample_XENON10 detector;
+    DetectorExample_XENON10 detector;
 
     double Ecg = 800; // Field between cathode and grid 1
     double Egg = 1600; // Field between two grids
