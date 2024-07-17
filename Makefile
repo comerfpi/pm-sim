@@ -1,5 +1,5 @@
 # Define the compiler
-CXX1 = g++
+CXX = g++
 
 # Define the output executable name
 TARGET1 = pmsim
