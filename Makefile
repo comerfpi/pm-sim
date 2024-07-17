@@ -12,7 +12,7 @@ SRC2 = histogrammer.C
 SRC3 = driftvel.cpp
 
 # Define the compilation flags
-CXXFLAGS = `root-config --cflags --libs` -lGarfield -lNEST
+CXXFLAGS = `root-config --cflags --libs` -lGarfield -lnest
 
 # The rule to build all targets
 all: $(TARGET1) $(TARGET2) $(TARGET3)
