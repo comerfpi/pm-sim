@@ -15,7 +15,7 @@ int main() {
     // Loop over each electric field value
     for (int i = 0; i < 3; ++i) {
         // Calculate the drift velocity
-        double driftVelocity = nestCalc.GetDriftVelocity(detector, density);
+        double driftVelocity = nestCalc.CalculateDriftVelocity(electricFields[i]);
         
         // Output the result
         std::cout << "Electric Field: " << electricFields[i] << " V/cm" << std::endl;
