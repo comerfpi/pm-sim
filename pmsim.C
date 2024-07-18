@@ -42,7 +42,7 @@ int main(int argc, char * argv[]) {
   //number of electrons to eject
   const int nElectron = 100;
  
-  //parameters to change based on comsol model [cm]
+  //parameters to change based on comsol model [cm], [V], [V]
   const double zCathode = 4.5155; //yCathode in model
   const double vAnode = 129.6;
   const double vCathode = -1584.4;
